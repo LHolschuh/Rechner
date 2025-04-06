@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    >
+    <link rel="stylesheet" href="anfrage.css">
+    <script src="anfrage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Informationen anfordern</title>
+</head>
+<body>
+<div class="fixed-grid container" id="anfrage">
+    <div class="field">
+        <label class="label">Vorname*</label>
+        <div class="control">
+            <input class="input green-focus" type="text" placeholder="Vorname">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Nachname*</label>
+        <div class="control">
+            <input class="input green-focus" type="text" placeholder="Nachname">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Telefon</label>
+        <div class="control">
+            <input class="input green-focus" type="tel" placeholder="Telefon">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">E-Mail*</label>
+        <div class="control">
+            <input class="input  green-focus" type="email" placeholder="E-Mail">
+            <div class="field">
+                <label class="label">Adresse</label>
+                <div class="control">
+                    <input class="input green-focus" type="text" placeholder="Adresse">
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label class="label">Nachricht</label>
+                <div class="control">
+                    <textarea class="textarea green-focus"
+                              placeholder="Ihre Nachricht an uns"></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Wert der Immobilie*</label>
+                <div class="control">
+                    <input class="input green-focus" id="wert" placeholder="0 €">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Gewünschte Sofortauszahlung*</label>
+                <div class="control">
+                    <input class="input green-focus" id="auszahlung" placeholder="0 €">
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link custom-color1">Anfrage absenden</button>
+                </div>
+                <div class="control">
+                    <button class="button is-link is-light custom-color2">Zurück zum Rechner
+                    </button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    >
+    <link rel="stylesheet" href="rechner.css">
+    <script src="rechner.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Rechner</title>
+</head>
+<body>
+<div class="fixed-grid container" id="rechner">
+    <div class="slidecontainer box" class="cell">
+        <h1>Wert der Immobilie</h1>
+        <h2 id="wertImmo"></h2>
+        <input type="range" min="200000" max="3000000" step="10000" value="400000" class="slider" id="myRange1">
+        <div class="slider-values">
+            <span id="minValue1">200.000 €</span>
+            <span id="maxValue1">3.000.000 €</span>
+        </div>
+        <span class="tag is-light">Bitte Wert auswählen. z.B. 900.000 €</span>
+
+        <h1 id="auszahlung">Gewünschte Sofortauszahlung</h1>
+        <h2 id="zahlung"></h2>
+        <input type="range" min="100000" max="1500000" step="1000" value="100000" class="slider" id="myRange2">
+        <div class="slider-values">
+            <span id="minValue2">100.000 €</span>
+            <span id="maxValue2">200.000 €</span>
+        </div>
+        <span class="tag is-light">Bitte Wert auswählen. z.B. 150.000 €</span>
+    </div>
+
+    <div class="box">
+        <h1>Ihr Ergebnis</h1>
+        <div class="chart-container">
+            <canvas id="myPieChart"></canvas>
+        </div>
+<button class="button" id="button">Angebot anfordern</button>
+    </div>
+</div>
+</body>
+</html>
