@@ -1,371 +1,119 @@
-/* Grunddesign: Für Lightmode und Standard */
+/* Standarddesign */
 body {
   background-color: white !important; /* Weißer Hintergrund */
   color: black !important; /* Schwarze Schrift */
+  font-size: 16px; /* Standard-Schriftgröße */
+  margin: 0; /* Standard-Rand entfernen */
+  padding: 0; /* Standard-Polster entfernen */
 }
 
 .container {
-  background-color: #f5f5f5 !important;
-  border: 2px solid #ddd !important;
+  background-color: #f5f5f5 !important; /* Grau-Hintergrund */
+  border: 2px solid #ddd !important; /* Rahmen */
+  padding: 20px; /* Innenabstand */
+  border-radius: 8px; /* Abgerundete Ecken */
+  display: flex; /* Boxen nebeneinander */
+  gap: 20px; /* Abstand zwischen den Boxen */
+}
+
+.box:first-child {
+  flex: 2 !important; /* Linke Box nimmt mehr Platz ein */
+}
+
+.box:last-child {
+  flex: 1 !important; /* Rechte Box nimmt weniger Platz ein */
 }
 
 .box {
+  padding: 10px;
   background-color: white !important;
-  color: black !important;
   border: 1px solid #ccc !important;
+  box-sizing: border-box !important;
+  width: auto; /* Standardbreite setzen */
+  color: black;
 }
 
+/* Slider */
 .slider {
-  background: #d3d3d3 !important; /* Grauer Hintergrund Slider */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%; /* Volle Breite */
+  height: 10px;
+  background: #d3d3d3; /* Grauer Hintergrund */
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
-  background: #6A9033 !important; /* Grüner Daumen */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #6A9033;
+  border-radius: 50%; /* Runde Form */
+  cursor: pointer;
+  border: none;
 }
 
 .slider::-moz-range-thumb {
-  background: #6A9033 !important; /* Grüner Daumen */
+  width: 25px;
+  height: 25px;
+  background: #6A9033;
+  border-radius: 50%; /* Runde Form */
+  cursor: pointer;
+  border: none;
 }
 
-/* Überschreiben von Farben im Darkmode */
+/* Mobile Layout: Änderungen bei kleinen Bildschirmen */
+@media (max-width: 768px) {
+  .container {
+    display: block !important; /* Display-Block erzwingen */
+    flex-direction: column !important; /* Boxen untereinander anzeigen */
+  }
+
+  .box {
+    width: 100% !important; /* Box nimmt 100% der Breite ein */
+    display: block !important; /* Boxen wie Blockelemente darstellen */
+    margin-bottom: 20px; /* Zusätzlicher Abstand zwischen Boxen */
+    flex: none !important; /* Flex-Verhalten deaktivieren */
+  }
+
+  body {
+    font-size: 18px !important; /* Schriftgröße erhöhen */
+  }
+}
+
+/* Sehr kleine Geräte */
+@media (max-width: 480px) {
+  body {
+    font-size: 20px !important; /* Noch größere Schrift auf kleinen Geräten */
+    padding: 10px; /* Etwas Platz hinzufügen */
+  }
+
+  .container {
+    gap: 10px !important; /* Weniger Abstand zwischen Boxen */
+  }
+
+  .box {
+    width: 100% !important; /* Breite auf 100% erzwingen */
+    margin-bottom: 15px; /* Weniger Abstand für sehr kleine Geräte */
+  }
+}
+
+/* Darkmode überschreiben */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: white !important;
     color: black !important;
   }
 
-  .container {
-    background-color: #f5f5f5 !important;
-    border: 2px solid #ddd !important;
-  }
-
   .box {
     background-color: white !important;
     color: black !important;
-    border: 1px solid #ccc !important;
   }
-
-  .slider {
-    background: #d3d3d3 !important;
-  }
-
-  .slider::-webkit-slider-thumb {
-    background: #6A9033 !important;
-  }
-
-  .slider::-moz-range-thumb {
-    background: #6A9033 !important;
-  }
-}/* Grunddesign */
- body {
-   background-color: white !important; /* Weißer Hintergrund */
-   color: black !important; /* Schwarze Schrift */
- }
-
- .container {
-   background-color: #f5f5f5 !important; /* Grau-Hintergrund Container */
-   border: 2px solid #ddd !important; /* Rahmen Container */
-   padding: 20px; /* Innenabstand */
-   border-radius: 8px; /* Abgerundete Ecken */
-   display: flex; /* Flex für Anordnung nebeneinander */
-   gap: 20px; /* Abstand zwischen den Boxen */
- }
-
- .box {
-   width: calc(50% - 10px); /* Jede Box nimmt 50% minus Abstand ein */
-   padding: 10px;
-   background-color: white !important; /* Hintergrundfarbe Weiß */
-   border: 1px solid #ccc !important; /* Rahmenfarbe Grau */
-   box-sizing: border-box; /* Korrekte Größenberechnung */
-   color: black !important;
- }
-
- /* Slider */
- .slider {
-   -webkit-appearance: none; /* Überschreiben Standard-Styles */
-   appearance: none;
-   width: 100%; /* Volle Breite */
-   height: 10px; /* Höhe Festlegen */
-   background: #d3d3d3 !important; /* Grauer Hintergrund */
-   outline: none; /* Entfernt Umrandung */
-   opacity: 0.7 !important; /* Transparenz */
-   transition: opacity 0.2s;
- }
-
- .slider:hover {
-   opacity: 1 !important; /* Schatteneffekt bei Mouseover */
- }
-
- .slider::-webkit-slider-thumb {
-   -webkit-appearance: none; /* Standard umgehen */
-   appearance: none;
-   width: 25px;
-   height: 25px;
-   background: #6A9033 !important; /* Grüner Knopf */
-   cursor: pointer;
-   border: none;
-   border-radius: 50%; /* Runde Form */
- }
-
- .slider::-moz-range-thumb {
-   width: 25px;
-   height: 25px;
-   background: #6A9033 !important; /* Grüner Knopf */
-   cursor: pointer;
-   border: none;
-   border-radius: 50%; /* Runde Form */
- }
-
- /* Anpassung bei kleineren Bildschirmen */
- @media screen and (max-width: 255px) {
-   .container {
-     flex-direction: column !important; /* Boxen übereinander */
-     gap: 10px;
-   }
- }
-
- /* Darkmode überschreiben */
- @media (prefers-color-scheme: dark) {
-   body {
-     background-color: white !important; /* Hintergrund Weiß erzwingen */
-     color: black !important; /* Schriftfarbe Schwarz */
-   }
-
-   .box {
-     background-color: white !important; /* Hintergrundfarbe der Boxen */
-     color: black !important; /* Schriftfarbe der Boxen */
-   }
-
-   .slider {
-     background: #d3d3d3 !important; /* Slider-Track bleibt Grau */
-   }
-
-   .slider::-webkit-slider-thumb {
-     background: #6A9033 !important; /* Daumen bleibt grün */
-   }
-
-   .slider::-moz-range-thumb {
-     background: #6A9033 !important; /* Daumen bleibt grün */
-   }
- }/* Grunddesign */
-  body {
-    background-color: white !important; /* Weißer Hintergrund */
-    color: black !important; /* Schwarze Schrift */
-  }
-
-  .container {
-    background-color: #f5f5f5 !important; /* Grau-Hintergrund Container */
-    border: 2px solid #ddd !important; /* Rahmen Container */
-    padding: 20px; /* Innenabstand */
-    border-radius: 8px; /* Abgerundete Ecken */
-    display: flex; /* Flex für Anordnung der Boxen */
-    gap: 20px; /* Abstand zwischen den Boxen */
-  }
-
-  .box:first-child {
-    flex: 2; /* Linke Box nimmt mehr Platz ein */
-  }
-
-  .box:last-child {
-    flex: 1; /* Rechte Box nimmt weniger Platz ein */
-  }
-
-  .box {
-    padding: 10px;
-    background-color: white !important; /* Hintergrundfarbe Weiß */
-    border: 1px solid #ccc !important; /* Rahmenfarbe Grau */
-    box-sizing: border-box; /* Korrekte Größenberechnung */
-    color: black !important;
-  }
-
-  /* Slider */
-  .slider {
-    -webkit-appearance: none; /* Überschreiben Standard-Styles */
-    appearance: none;
-    width: 100%; /* Volle Breite */
-    height: 10px; /* Höhe Festlegen */
-    background: #d3d3d3 !important; /* Grauer Hintergrund */
-    outline: none; /* Entfernt Umrandung */
-    opacity: 0.7 !important; /* Transparenz */
-    transition: opacity 0.2s;
-  }
-
-  .slider:hover {
-    opacity: 1 !important; /* Schatteneffekt bei Mouseover */
-  }
-
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Standard umgehen */
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #6A9033 !important; /* Grüner Knopf */
-    cursor: pointer;
-    border: none;
-    border-radius: 50%; /* Runde Form */
-  }
-
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #6A9033 !important; /* Grüner Knopf */
-    cursor: pointer;
-    border: none;
-    border-radius: 50%; /* Runde Form */
-  }
-
-  /* Anpassung bei kleineren Bildschirmen */
-  @media screen and (max-width: 255px) {
-    .container {
-      flex-direction: column !important; /* Boxen übereinander */
-      gap: 10px;
-    }
-
-    .box {
-      flex: none; /* Standardgröße bei kleinen Bildschirmen */
-      width: 100%; /* Nimmt volle Breite ein */
-    }
-  }
-
-  /* Darkmode überschreiben */
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: white !important; /* Hintergrund Weiß erzwingen */
-      color: black !important; /* Schriftfarbe Schwarz */
-    }
-
-    .box {
-      background-color: white !important; /* Hintergrundfarbe der Boxen */
-      color: black !important; /* Schriftfarbe der Boxen */
-    }
-
-    .slider {
-      background: #d3d3d3 !important; /* Slider-Track bleibt Grau */
-    }
-
-    .slider::-webkit-slider-thumb {
-      background: #6A9033 !important; /* Daumen bleibt grün */
-    }
-
-    .slider::-moz-range-thumb {
-      background: #6A9033 !important; /* Daumen bleibt grün */
-    }
-  }/* Grunddesign */
-   body {
-     background-color: white !important; /* Weißer Hintergrund */
-     color: black !important; /* Schwarze Schrift */
-     font-size: 16px; /* Standard-Schriftgröße */
-   }
-
-   .container {
-     background-color: #f5f5f5 !important;
-     border: 2px solid #ddd !important;
-     padding: 20px;
-     border-radius: 8px;
-     display: flex;
-     gap: 20px;
-   }
-
-   .box:first-child {
-     flex: 2; /* Linke Box nimmt mehr Platz ein */
-   }
-
-   .box:last-child {
-     flex: 1; /* Rechte Box nimmt weniger Platz ein */
-   }
-
-   .box {
-     padding: 10px;
-     background-color: white !important;
-     border: 1px solid #ccc !important;
-     box-sizing: border-box;
-     color: black !important;
-   }
-
-   /* Slider */
-   .slider {
-     -webkit-appearance: none;
-     appearance: none;
-     width: 100%;
-     height: 10px;
-     background: #d3d3d3 !important;
-     outline: none;
-     opacity: 0.7 !important;
-     transition: opacity 0.2s;
-   }
-
-   .slider:hover {
-     opacity: 1 !important;
-   }
-
-   .slider::-webkit-slider-thumb {
-     -webkit-appearance: none;
-     appearance: none;
-     width: 25px;
-     height: 25px;
-     background: #6A9033 !important;
-     cursor: pointer;
-     border: none;
-     border-radius: 50%;
-   }
-
-   .slider::-moz-range-thumb {
-     width: 25px;
-     height: 25px;
-     background: #6A9033 !important;
-     cursor: pointer;
-     border: none;
-     border-radius: 50%;
-   }
-
-   /* Anpassung bei kleinen Bildschirmen */
-   @media screen and (max-width: 768px) {
-     body {
-       font-size: 18px !important; /* Größere Schriftgröße auf mobilen Geräten */
-     }
-
-     .container {
-       flex-direction: column !important; /* Boxen untereinander statt nebeneinander anzeigen */
-     }
-
-     .box {
-       width: 100%; /* Jede Box nimmt die volle Breite ein */
-     }
-   }
-
-   /* Anpassung bei sehr kleinen Bildschirmen */
-   @media screen and (max-width: 480px) {
-     body {
-       font-size: 20px !important; /* Noch größere Schrift für kleine Bildschirme */
-       padding: 10px;
-     }
-
-     .container {
-       gap: 10px; /* Weniger Abstand zwischen Boxen */
-     }
-   }
-
-   /* Darkmode überschreiben */
-   @media (prefers-color-scheme: dark) {
-     body {
-       background-color: white !important;
-       color: black !important;
-     }
-
-     .box {
-       background-color: white !important;
-       color: black !important;
-     }
-
-     .slider {
-       background: #d3d3d3 !important;
-     }
-
-     .slider::-webkit-slider-thumb {
-       background: #6A9033 !important;
-     }
-
-     .slider::-moz-range-thumb {
-       background: #6A9033 !important;
-     }
-   }}
+}
