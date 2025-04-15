@@ -6,6 +6,28 @@ html, body {
   padding: 0;
   font-size: 16px;
 }
+/* ----- Override: Kein Darkmode erlaubt ----- */
+html {
+  color-scheme: light !important; /* Zwingt Browser auf den Hellmodus */
+  background-color: #fff !important; /* Sicherstellen, dass der Hintergrund weiß ist */
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body, div#rechner, div.box {
+    background-color: #ffffff !important; /* Erneutes Überschreiben für Darkmode */
+    color: #000000 !important; /* Text bleibt schwarz */
+  }
+}
+
+body {
+  background-color: #ffffff !important; /* Weißer Hintergrund */
+  color: #000000 !important; /* Schwarzer Text */
+}
+
+div#rechner.fixed-grid.container {
+  background-color: #ffffff !important; /* Überschreibt jede mögliche Dunkelheit */
+  color: #000000 !important;
+}
 
 /* Hauptcontainer: Boxen untereinander anordnen */
 div#rechner.fixed-grid.container {
