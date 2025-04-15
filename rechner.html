@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- Bulma CSS -->
     <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
     >
-    <!-- Eigene CSS in separater Datei -->
     <link rel="stylesheet" href="rechner.css">
-    <!-- Eigener JavaScript-Code -->
     <script src="rechner.js"></script>
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <title>Rechner</title>
 </head>
 <body>
-<div class="custom-container" id="rechner">
-    <div class="slidecontainer custom-box">
+<div class="fixed-grid container" id="rechner">
+    <div class="slidecontainer box" class="cell">
         <h1>Wert der Immobilie</h1>
         <h2 id="wertImmo"></h2>
         <input type="range" min="200000" max="3000000" step="10000" value="400000" class="slider" id="myRange1">
@@ -39,11 +35,12 @@
         <span class="tag is-light">Bitte Wert auswählen. z.B. 150.000 €</span>
     </div>
 
-    <div class="custom-box">
+    <div class="box">
         <h1>Ihr Ergebnis</h1>
         <div class="chart-container">
             <canvas id="myPieChart"></canvas>
-        </div>
+
+</div>
     </div>
 </div>
 </body>
