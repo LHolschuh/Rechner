@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
 
+
+    <link rel="stylesheet" href="rechner.css">
     <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
     >
-    <link rel="stylesheet" href="rechner.css">
     <script src="rechner.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -34,13 +35,18 @@
         </div>
         <span class="tag is-light">Bitte Wert auswählen. z.B. 150.000 €</span>
     </div>
+    <div class="ergebnis box">
+        <h2 id="verkaufen"> </h2>
+        <h2 id="verbleibend"></h2>
+        <h2 id="nutzung"> </h2>
+    </div>
 
     <div class="box">
         <h1>Ihr Ergebnis</h1>
         <div class="chart-container">
             <canvas id="myPieChart"></canvas>
+        </div>
 
-</div>
     </div>
 </div>
 </body>

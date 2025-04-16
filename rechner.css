@@ -86,6 +86,23 @@ div#rechner div.box {
   height: 10px;
   background: #d3d3d3 !important;
 }
+.slider-values {
+  display: flex; /* Flexbox für einfache Anordnung */
+  justify-content: space-between; /* Elemente an beiden Enden platzieren */
+  margin-top: 5px; /* Optional: Abstand zwischen Slider und Werten */
+}
+
+.slider-values span {
+  font-size: 14px; /* Optional: Schriftgröße für bessere Lesbarkeit */
+  color: #333; /* Optional: Farbe für Kontrast */
+}
+
+/* Zusätzliche Option für mobile Geräte */
+@media (max-width: 768px) {
+  .slider-values span {
+    font-size: 12px; /* Kleinere Schriftgröße für kleinere Bildschirme */
+  }
+}
 
 .slider::-webkit-slider-thumb {
   width: 25px;
