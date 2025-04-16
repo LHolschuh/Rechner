@@ -9,6 +9,8 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
     >
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
     <script src="rechner.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -17,6 +19,7 @@
 <body>
 <div class="fixed-grid container" id="rechner">
     <div class="slidecontainer box" class="cell">
+        <div class="abstand">
         <h1>Wert der Immobilie</h1>
         <h2 id="wertImmo"></h2>
         <input type="range" min="200000" max="3000000" step="10000" value="400000" class="slider" id="myRange1">
@@ -25,7 +28,7 @@
             <span id="maxValue1">3.000.000 €</span>
         </div>
         <span class="tag is-light">Bitte Wert auswählen. z.B. 900.000 €</span>
-
+        </div>
         <h1 id="auszahlung">Gewünschte Sofortauszahlung</h1>
         <h2 id="zahlung"></h2>
         <input type="range" min="100000" max="1500000" step="1000" value="100000" class="slider" id="myRange2">
