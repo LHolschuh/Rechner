@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const verbleibend = document.getElementById("verbleibend");
     const nutzung = document.getElementById("nutzung");
     const ctx = document.getElementById('myPieChart').getContext('2d');
+    const gesamttext = document.getElementById('gesamttext');
     const gesamtwert = document.getElementById('gesamtwert');
     const anteilprozent = document.getElementById('anteilProzent');
     const anteilwert = document.getElementById('anteilwert');
@@ -18,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const gesamt = document.getElementById('gesamt');
     const vergleich= document.getElementById('vergleich');
     const slider3 = document.getElementById("myRange3");
+    const sliders = document.querySelectorAll(".slider");
+
+    sliders.forEach(slider => {
+        slider.addEventListener("touchmove", () => {
+            slider.style.opacity = "1"; // Optische Rückmeldung für Touch-Nutzer
+        });
+    });
 
     // Helper-Funktionen
     const calculateValue = (sliderValue) => Math.round(sliderValue);
@@ -111,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const verbleibendProzent = (100 - verkaufenProzent).toFixed(0);
         const nutzungsgebuehr = ((sofortZahlung * 0.0529) / 12).toFixed(0);
         const gesamtwertNachJahren = Math.round(immoWert * Math.pow(1.002, jahre));
+        gesamttext.innerHTML = `Gesamtwert der Immobilie nach ${jahre} Jahren`;
 gesamtwert.innerHTML = `${Math.round(immoWert * Math.pow(1.002, jahre)).toLocaleString("de-DE")} €`;
 anteilprozent.innerHTML = `Ihr Anteil ${verbleibendProzent} %`;
 const anteilWert = Math.round(gesamtwertNachJahren * verbleibendProzent/100);
