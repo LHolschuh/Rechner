@@ -129,3 +129,12 @@ canvas#myPieChart {
     display: block; /* Sicherstellen, dass der Canvas blockweise angezeigt wird */
   }
 }
+input[type="range"] {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.values p {
+    font-size: 18px;
+    margin: 5px 0;
+}

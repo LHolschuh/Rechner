@@ -20,14 +20,14 @@
 <div class="fixed-grid container" id="rechner">
     <div class="slidecontainer box" class="cell">
         <div class="abstand">
-        <h1>Wert der Immobilie</h1>
-        <h2 id="wertImmo"></h2>
-        <input type="range" min="200000" max="3000000" step="10000" value="400000" class="slider" id="myRange1">
-        <div class="slider-values">
-            <span id="minValue1">200.000 €</span>
-            <span id="maxValue1">3.000.000 €</span>
-        </div>
-        <span class="tag is-light">Bitte Wert auswählen. z.B. 900.000 €</span>
+            <h1>Wert der Immobilie</h1>
+            <h2 id="wertImmo"></h2>
+            <input type="range" min="200000" max="3000000" step="10000" value="400000" class="slider" id="myRange1">
+            <div class="slider-values">
+                <span id="minValue1">200.000 €</span>
+                <span id="maxValue1">3.000.000 €</span>
+            </div>
+            <span class="tag is-light">Bitte Wert auswählen. z.B. 900.000 €</span>
         </div>
         <h1 id="auszahlung">Gewünschte Sofortauszahlung</h1>
         <h2 id="zahlung"></h2>
@@ -39,15 +39,34 @@
         <span class="tag is-light">Bitte Wert auswählen. z.B. 150.000 €</span>
     </div>
     <div class="ergebnis box">
-        <h2 id="verkaufen"> </h2>
+        <h2 id="verkaufen"></h2>
         <h2 id="verbleibend"></h2>
-        <h2 id="nutzung"> </h2>
+        <h2 id="nutzung"></h2>
     </div>
 
     <div class="box">
         <h1>Ihr Ergebnis</h1>
         <div class="chart-container">
             <canvas id="myPieChart"></canvas>
+        </div>
+
+    </div>
+    <div class="berechnung">
+        <h1>Immobilien Teilverkauf Rechner</h1>
+        <label for="years">Jahre bis zum Gesamtverkauf:</label>
+        <input type="range" id="years" min="10" max="25" value="15" oninput="updateValues(this.value)">
+        <span id="yearsValue">15 Jahre</span>
+
+        <div class="values">
+            <p>Gesamtwert der Immobilie nach </p>
+            <p><span id="yearsText">15</span> Jahren:</p>
+            <p id="totalValue">538.347 €</p>
+            <p>Ihr Anteil (75 %):</p>
+            <p id="shareValue">403.760 €</p>
+            <p>Durchführungsentgelt (HausVorsorge):</p>
+            <p id="feeValue">22.880 €</p>
+            <p>Zweiter Auszahlungsbetrag:</p>
+            <p id="secondPayout">380.880 €</p>
         </div>
 
     </div>

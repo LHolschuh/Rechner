@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--    <link-->
+    <!--            rel="stylesheet"-->
+    <!--            href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"-->
+    <!--    >-->
+    <link rel="stylesheet" href="rechnerNeu.css">
+
+    <script src="rechner.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Rechner</title>
+</head>
+<body data-theme="light">
+<div class="container wert">
+    <p class="ueberschrift">Wert der Immobilie</p>
+    <p class="wert" id="wertImmo"></p>
+    <input type="range" min="200000" max="3000000" step="10000" value="400000" class="slider" id="myRange1">
+    <div class="slider-values">
+        <span id="minValue1">200.000 €</span>
+        <span id="maxValue1">3.000.000 €</span>
+    </div>
+    <span class="hinweis">Bitte Wert auswählen. z.B. 900.000 €</span>
+    <p class="ueberschrift">Gewünschte Sofortauszahlung</p>
+    <p class="wertImmo" id="zahlung"></p>
+    <input type="range" min="100000" max="1500000" step="1000" value="100000" class="slider" id="myRange2">
+    <div class="slider-values">
+        <span id="minValue2">100.000 €</span>
+        <span id="maxValue2">200.000 €</span>
+    </div>
+    <span class="hinweis">Bitte Wert auswählen. z.B. 150.000 €</span>
+    <div class="ergebnis box">
+        <p id="verkaufen"></p>
+        <p id="verbleibend"></p>
+        <p id="nutzung"></p>
+    </div>
+
+    <div class="box keinContainer">
+        <p class="ueberschrift">Ihr Ergebnis</p>
+        <div class="chart-container">
+            <canvas id="myPieChart"></canvas>
+        </div>
+
+    </div>
+
+<!--Gesamtrechnung-->
+    <div class="keinContainer">
+        <p class="ueberschriftGross">Stellen Sie exemplarisch Ihre Gesamtrechnung auf!</p>
+        <p class="erlaeuterung">Im Zuge des Immobilien Teilverkaufs wird Ihnen ein lebenslanges Nießbrauchrecht im
+            Eigenheim zuteil. Gleichzeitig haben Sie oder Ihre Kinder jederzeit die Möglichkeit, Ihr Eigenheim
+            vollständig zu verkaufen oder aber den veräußerten Anteil zurückzukaufen. Hinweis: Das Durchführungsentgelt
+            beträgt derzeit 3,75% bei Verkauf an Dritte und lediglich 2% bei Verkauf an Vorkaufsberechtigte.</p>
+        <p class="hinweis">*** Wichtiger Hinweis zur künftigen Wertentwicklung Ihrer Immobilie ***</p>
+        <p class="hinweis">Bitte beachten Sie, dass unser Teilverkaufsrechner lediglich die Folgen einer positiven
+            Wertentwicklung Ihrer Eigenheimes auf Ihre Gesamtbilanz darstellt. Darüberhinaus kann Ihre Immobilie über
+            den gesamten Zeitraum der Partnerschaft hinweg auch keine Wertsteigerung erfahren oder auch im Wert sinken.
+            Dies hat unter Umständen negative Auswirkungen auf die Gesamtbilanz Ihres Teilverkaufs, die wir Ihnen gerne
+            in einem persönlichen und unverbindlichen Beratungsgespräch aufzeigen werden.</p>
+    </div>
+    <p class="ueberschrift">Jahre bis zum Gesamtverkauf</p>
+    <input type="range" min="10" max="25" step="5" value="10" class="slider" id="myRange3">
+    <div class="slider-values">
+        <span>10 Jahre</span>
+        <span>15 Jahre</span>
+        <span>20 Jahre</span>
+        <span>25 Jahre</span>
+    </div>
+    <div class="keinContainer nebeneinander">
+        <div class="container" id="linkerContainer">
+            <div class="nebeneinander">
+                <div>
+                    <p class="ueberschriftKlein  keinMarginUnten">Gesamtwert der Immobilie nach </p>
+                    <p class="hinweis keinMarginOben">(Wert bei einer angenommenen jährlichen Wertsteigerung von 2 %)</p>
+                </div>
+                <p class="betraege" id="gesamtwert">xxx</p>
+            </div>
+            <div class="nebeneinander">
+                <p class="ueberschriftKlein" id="anteilProzent">Ihr Anteil</p>
+                <p class="betraege" id="anteilwert">xxx</p>
+            </div>
+            <div class="nebeneinander">
+                <p class="ueberschriftKlein" id="entgelt">abzgl. Durchführungsentgelt an HausVorsorge</p>
+                <p class="betraege" id="entgeltwert">xxx</p>
+            </div>
+        </div>
+        <div class="container" id="rechterContainer">
+            <div class="nebeneinander">
+                <p class="ueberschriftKlein">Ihr erster Auszahlungsbetrag</p>
+                <p class="betraege" id="auszahlung1">xxx</p>
+            </div>
+            <div class="nebeneinander">
+                <p class="ueberschriftKlein">Ihr zweiter Auszahlungsbetrag</p>
+                <p class="betraege" id="auszahlung2">xxx</p>
+            </div>
+            <div class="nebeneinander">
+                <p class="ueberschriftKlein">Durch die Immobilienpartnerschaft mit HausVorsorge erhalten Sie insgesamt</p>
+                <p class="betraege" id="gesamt">xxx</p>
+            </div>
+            <div class="nebeneinander">
+                <p class="ueberschriftKlein">Vergleich zum direkten Gesamtverkauf</p>
+                <p class="betraege" id="vergleich">xxx</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -9,6 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const verbleibend = document.getElementById("verbleibend");
     const nutzung = document.getElementById("nutzung");
     const ctx = document.getElementById('myPieChart').getContext('2d');
+    const gesamtwert = document.getElementById('gesamtwert');
+    const anteilprozent = document.getElementById('anteilProzent');
+    const anteilwert = document.getElementById('anteilwert');
+    const entgeltwert = document.getElementById('entgeltwert');
+    const auszahlung1 = document.getElementById('auszahlung1');
+    const auszahlung2 = document.getElementById('auszahlung2');
+    const gesamt = document.getElementById('gesamt');
+    const vergleich= document.getElementById('vergleich');
+    const slider3 = document.getElementById("myRange3");
 
     // Helper-Funktionen
     const calculateValue = (sliderValue) => Math.round(sliderValue);
@@ -64,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const immoWert = calculateValue(slider1.value);
         wertImmo.innerHTML = `${immoWert.toLocaleString("de-DE")} €`;
 
+
+
         // Maximalwert für Slider 2 berechnen
         const maxLowerValue = Math.floor(immoWert * 0.5);
         maxValue2.innerHTML = `${maxLowerValue.toLocaleString("de-DE")} €`;
@@ -79,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ergebnisse und Chart aktualisieren
         const results = updateResults();
         updateChart(results);
+        updateValues();
     };
 
     // Slider 2 aktualisieren
@@ -89,13 +101,37 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ergebnisse und Chart aktualisieren
         const results = updateResults();
         updateChart(results);
+        updateValues();
     };
+    function updateValues() {
+        const jahre = slider3.value;
+        const immoWert = parseFloat(slider1.value);
+        const sofortZahlung = parseFloat(slider2.value);
+        const verkaufenProzent = ((sofortZahlung / immoWert) * 100).toFixed(0);
+        const verbleibendProzent = (100 - verkaufenProzent).toFixed(0);
+        const nutzungsgebuehr = ((sofortZahlung * 0.0529) / 12).toFixed(0);
+        const gesamtwertNachJahren = Math.round(immoWert * Math.pow(1.002, jahre));
+gesamtwert.innerHTML = `${Math.round(immoWert * Math.pow(1.002, jahre)).toLocaleString("de-DE")} €`;
+anteilprozent.innerHTML = `Ihr Anteil ${verbleibendProzent} %`;
+const anteilWert = Math.round(gesamtwertNachJahren * verbleibendProzent/100);
+anteilwert.innerHTML = `${anteilWert.toLocaleString("de-DE")} €`;
+const entgeltWert = Math.round(gesamtwertNachJahren * 0.0375);
+entgeltwert.innerHTML = `${entgeltWert.toLocaleString("de-DE")} €`;
+auszahlung1.innerHTML = `${sofortZahlung.toLocaleString("de-DE")} €`;
+const auszahlungZwei = anteilWert - entgeltWert;
+auszahlung2.innerHTML = `${auszahlungZwei.toLocaleString("de-DE")} €`;
+gesamt.innerHTML = `${(sofortZahlung + auszahlungZwei).toLocaleString("de-DE")} €`;
+vergleich.innerHTML = `${immoWert.toLocaleString("de-DE")} €`;
+
+        }
 
     // Initial laden
     updateSlider1();
     updateResults();
+    updateValues();
 
     // Events registrieren
     slider1.addEventListener('input', updateSlider1);
     slider2.addEventListener('input', updateSlider2);
+    slider3.addEventListener('input', updateValues);
 });
