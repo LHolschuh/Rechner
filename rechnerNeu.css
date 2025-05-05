@@ -98,8 +98,17 @@ display: flex;
 
 }
 
+
+
 .chart-container {
-width: 30%;
-margin: auto;
+    width: 30%; /* Standardgröße für größere Bildschirme */
+    margin: auto;
+}
+
+/* ✅ Chart nimmt auf Mobilgeräten die gesamte Breite ein */
+@media screen and (max-width: 768px) {
+    .chart-container {
+        width: 100%;
+    }
 }
 
