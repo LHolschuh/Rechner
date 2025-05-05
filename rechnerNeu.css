@@ -114,8 +114,12 @@ display: flex;
     .chart-container {
         width: 100%;
     }
-    .betraege {
-    font-size: 8px;
-    }
+  .nebeneinander {
+      display: flex;
+      flex-wrap: wrap; /* ✅ Elemente umbrechen bei Platzmangel */
+      justify-content: space-between;
+      gap: 5px;
+  }
+
 }
 
