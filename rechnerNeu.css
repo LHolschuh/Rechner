@@ -118,5 +118,8 @@ display: flex;
     .chart-container {
         width: 100%;
     }
+    .betraege {
+    font-size: 8px;
+    }
 }
 
