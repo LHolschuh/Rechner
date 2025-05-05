@@ -7,11 +7,6 @@ body {
 
 .container {
     width: 95%;
-    margin: auto;
-    padding: 15px;
-    border: 2px solid #000; /* Rahmen */
-    border-radius: 15px;
-
     text-align: left; /* Text linksbündig */
 }
 /* ✅ Optimierung für mobile Darstellung */
