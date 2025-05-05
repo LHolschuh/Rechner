@@ -114,9 +114,11 @@ display: flex;
     .chart-container {
         width: 100%;
     }
+    .betraege {
+    font-size: 12 px;
+    }
   .nebeneinander {
          flex-direction: column; /* ✅ Stapelt Elemente auf kleinen Bildschirmen */
-
      }
 
 
