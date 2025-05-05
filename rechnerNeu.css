@@ -9,15 +9,6 @@ body {
     width: 95%;
     text-align: left; /* Text linksbündig */
 }
-/* ✅ Optimierung für mobile Darstellung */
-@media screen and (max-width: 768px) {
-    .container {
-        width: 95%; /* Mehr Platz für kleinere Bildschirme */
-        padding: 10px;
-        overflow: hidden; /* Verhindert Abschneiden */
-    }
-}
-
 
 .keinContainer {
 text-align: center;
@@ -115,6 +106,11 @@ display: flex;
 
 /* ✅ Chart nimmt auf Mobilgeräten die gesamte Breite ein */
 @media screen and (max-width: 768px) {
+.container {
+        width: 95%; /* Mehr Platz für kleinere Bildschirme */
+        padding: 10px;
+        overflow: hidden; /* Verhindert Abschneiden */
+    }
     .chart-container {
         width: 100%;
     }
