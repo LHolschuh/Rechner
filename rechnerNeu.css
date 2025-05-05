@@ -115,11 +115,10 @@ display: flex;
         width: 100%;
     }
   .nebeneinander {
-      display: flex;
-      flex-wrap: wrap; /* ✅ Elemente umbrechen bei Platzmangel */
-      justify-content: space-between;
-      gap: 5px;
-  }
+         flex-direction: column; /* ✅ Stapelt Elemente auf kleinen Bildschirmen */
+         gap: 10px;
+     }
+
 
 }
 
