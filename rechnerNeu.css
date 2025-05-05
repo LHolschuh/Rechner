@@ -117,6 +117,7 @@ display: flex;
     .betraege {
     font-size: 12 px;
     margin-top: 3px;
+    font-weight: bold;
     }
   .nebeneinander {
          flex-direction: column; /* ✅ Stapelt Elemente auf kleinen Bildschirmen */
