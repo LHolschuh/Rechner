@@ -122,6 +122,7 @@ display: flex;
   .nebeneinander {
          flex-direction: column; /* ✅ Stapelt Elemente auf kleinen Bildschirmen */
      gap: 0px;
+     border-left-style: solid;
      }
 
 
