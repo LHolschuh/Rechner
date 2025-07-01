@@ -19,26 +19,26 @@ text-align: center;
 }
 
 .ueberschrift {
-font-size: 30px; /* Mittelgroß */
+font-size: 35px; /* Mittelgroß */
     font-weight: bold; /* Fett gedruckt */
     text-align: center;
 
 }
 
 .ueberschriftGross {
-font-size: 36px; /* Groß */
+font-size: 40px; /* Groß */
     font-weight: bold; /* Fett gedruckt */
     text-align: center;
     color: #6A9033;
 }
 
 .ueberschriftKlein {
-font-size: 18px;
+font-size: 25px;
 
 }
 
 .hinweis {
-font-size: 12px; /* Klein */
+font-size: 20px; /* Klein */
 }
 
 .keinMarginUnten {
@@ -51,7 +51,7 @@ margin-top: 0px;}
 .ergebnis {
 margin-top: 40px;
 font-style: italic;
-font-size: 10px;
+font-size: 16px;
 }
 
 .slider {
