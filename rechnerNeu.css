@@ -97,7 +97,9 @@ display: flex;
 
 }
 
-
+.slider-values {
+font-size:15px;
+}
 
 .chart-container {
     width: 30%; /* Standardgröße für größere Bildschirme */
@@ -126,8 +128,6 @@ display: flex;
 .unterschriftKlein {
 margin-bottom: 0px;
 }
-.slider-values {
-font-size:15px;
-}
+
 }
 
