@@ -63,7 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
         options: {
             responsive: true,
             plugins: {
-                legend: { position: 'top' },
+                legend: { position: 'top',
+                            labels: {
+                                                     font: {
+                                                       size: 20
+                                                     }
+                                                   }
+ },
                 tooltip: { enabled: true }
             }
         }

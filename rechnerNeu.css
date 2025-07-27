@@ -126,6 +126,8 @@ display: flex;
 .unterschriftKlein {
 margin-bottom: 0px;
 }
-
+.rangeFont {
+font-size:20px;
+}
 }
 
