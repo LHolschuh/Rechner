@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Prozentwerte berechnen
         const verkaufenProzent = ((sofortZahlung / immoWert) * 100).toFixed(0);
         const verbleibendProzent = (100 - verkaufenProzent).toFixed(0);
-        const nutzungsgebuehr = ((sofortZahlung * 0.0529) / 12).toFixed(0);
+        const nutzungsgebuehr = ((sofortZahlung * 0.0584) / 12).toFixed(0);
 
-        // Ergebnisse im DOM aktualisieren
+        // Ergebnisse im DOM aktualisieren //wird nicht mehr angezeigt
         verkaufen.innerHTML = `Anteil, den Sie verkaufen: ${verkaufenProzent} %`;
         verbleibend.innerHTML = `In Ihrem Besitz verbleibend: ${verbleibendProzent} %`;
-        nutzung.innerHTML = `Monatliche Nutzungsgebühr (5,29 % p.a.): ${nutzungsgebuehr} €`;
+        nutzung.innerHTML = `Monatliche Nutzungsgebühr: ${nutzungsgebuehr} €`;
 
         return { verkaufenProzent, verbleibendProzent };
     };
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sofortZahlung = parseFloat(slider2.value);
         const verkaufenProzent = ((sofortZahlung / immoWert) * 100).toFixed(0);
         const verbleibendProzent = (100 - verkaufenProzent).toFixed(0);
-        const nutzungsgebuehr = ((sofortZahlung * 0.0529) / 12).toFixed(0);
+        const nutzungsgebuehr = ((sofortZahlung * 0.0584) / 12).toFixed(0);
         const gesamtwertNachJahren = Math.round(immoWert * Math.pow(1.02, jahre));
         gesamttext.innerHTML = `Gesamtwert der Immobilie nach ${jahre} Jahren`;
 gesamtwert.innerHTML = `${Math.round(immoWert * Math.pow(1.02, jahre)).toLocaleString("de-DE")} €`;
